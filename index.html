@@ -18,5 +18,12 @@
   
 <script>var continuallySettings = { appID: '43krz54vyj6q' };</script>
 <script src="https://app.staging.continual.ly/js/embed/continually-embed.latest.min.js"></script>
+ <script>
+         continually.on('emailCapture', function(event){
+	     console.log(event);
+       	    console.log('emailCapture');
+         });
+    </script>
+
 </body>
 </html>
