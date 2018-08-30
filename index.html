@@ -18,12 +18,19 @@
   
 <script>var continuallySettings = { appID: '43krz54vyj6q' };</script>
 <script src="https://app.staging.continual.ly/js/embed/continually-embed.latest.min.js"></script>
- <script>
-         continually.on('welcomeMessage:open', function(event){
-	     console.log(event);
-       	    console.log('welcomeMessage:open');
-         });
-    </script>
+<script>
+var r =['startConversation','sidebarOpen','sidebarClose','welcomeMessage:close','welcomeMessage:open','message','message:sent','emailCapture','nameCapture',
+'phoneCapture','companyCapture','scheduling:requestMeeting','scheduling:meetingBooked','completeConversation'];
 
+continually.on('ready', function(api){
+    for (var i=0; i< r.length; i++) {
+        api.on(r[i], function(event){
+            console.log('-------------------------------------');
+            console.log(this.type);
+            console.log(event);
+        });
+    }
+});
+</script>
 </body>
 </html>
