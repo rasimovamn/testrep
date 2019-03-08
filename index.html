@@ -68,6 +68,21 @@ continually.on('ready', function(api){
     }
 });
 </script>
+ 
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<input id="name" value="Sergey Rasimov!">
+<input id="email" value="pizzant+0307-002@gmail.com">
+<button id="update">Update</button>
+<script>
+$('#update').on('click', function(){
+continually.identity({
+     name: $('#name').val(),
+     email: $('#email').val(),
+     company: 'TUTU',
+     bad_memory: '22'
+ });
+});
+</script>
 
 </body>
 </html>
